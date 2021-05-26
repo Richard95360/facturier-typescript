@@ -4,6 +4,7 @@ import { hasPrint } from '../interfaces/hasPrint.js';
 import { hasRender } from '../interfaces/hasRender.js';
 import { Display } from './Display.js';
 import { Print } from './Print.js';
+import { bind } from '../decorators/bind.js';
 
 
 export class FormInput {
@@ -65,7 +66,7 @@ export class FormInput {
     }
     //Listener
     private submitFormListener():void {
-        this.form.addEventListener('submit', this.handleFormSubmit.bind(this) )
+        this.form.addEventListener('submit', this.handleFormSubmit )
     }
 
     private printListener(btn:HTMLButtonElement, docContainer:HTMLDivElement):void {
@@ -83,11 +84,13 @@ export class FormInput {
         })
     }
     private getStoredDocsListener():void {
-        this.btnStoredInvoices.addEventListener('click', this.getItems.bind(this,'invoice'));
-        this.btnStoredEstimates.addEventListener('click', this.getItems.bind(this,'estimate'))
+        this.btnStoredInvoices.addEventListener('click',() => this.getItems('invoice'));
+        this.btnStoredEstimates.addEventListener('click',() => this.getItems('estimate'))
     }
 
     private getItems(docType: string){
+        console.log(this);
+        
         if(this.storedEl.hasChildNodes()){
             this.storedEl.innerHTML = "";
         }
@@ -118,17 +121,16 @@ export class FormInput {
 
         }
     }
-
+    @bind
     private handleFormSubmit(e:Event) {
           e.preventDefault();
-
+          
       const inputs =  this.inputData()
 
       if(Array.isArray(inputs)){
           const [type, firstName, lastName, address,country,town, zip, product, price,quantity,tva] = inputs
 
-         // console.log(type, firstName, lastName, address,country,town, zip, product, price,quantity,tva);
-
+         
           let docData: hasHtmlFormat;
           let date:Date = new Date();
           
