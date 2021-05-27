@@ -1,10 +1,10 @@
-import {Datas} from '../classes/Datas.js'
-import { hasHtmlFormat } from '../interfaces/hasHtmlFormat.js';
-import { hasPrint } from '../interfaces/hasPrint.js';
-import { hasRender } from '../interfaces/hasRender.js';
-import { Display } from './Display.js';
-import { Print } from './Print.js';
-import { bind } from '../decorators/bind.js';
+import {Datas} from '../classes/Datas'
+import { hasHtmlFormat } from '../interfaces/hasHtmlFormat';
+import { hasPrint } from '../interfaces/hasPrint';
+import { hasRender } from '../interfaces/hasRender';
+import { Display } from './Display';
+import { Print } from './Print';
+import { bind } from '../decorators/bind';
 
 
 export class FormInput {

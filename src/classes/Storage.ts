@@ -1,4 +1,4 @@
-import { hasSetItem } from '../interfaces/hasSetItem.js'
+import { hasSetItem } from '../interfaces/hasSetItem'
 
 export class Storage  implements hasSetItem{
 

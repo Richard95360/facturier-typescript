@@ -1,6 +1,6 @@
-import { hasRender } from '../interfaces/hasRender.js';
-import { hasHtmlFormat } from '../interfaces/hasHtmlFormat.js';
-import { Storage } from './Storage.js';
+import { hasRender } from '../interfaces/hasRender';
+import { hasHtmlFormat } from '../interfaces/hasHtmlFormat';
+import { Storage } from './Storage';
 
 
 export class Display implements hasRender  {

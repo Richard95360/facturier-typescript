@@ -1,4 +1,4 @@
-import { hasPrint } from "../interfaces/hasPrint.js";
+import { hasPrint } from "../interfaces/hasPrint";
 
 export class Print implements hasPrint {
 
